@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol XYInputViewDelegate {
+@objc protocol XYInputViewDelegate {
 	func sendButtonPressedWith(str: String)
 }
 
 class XYInputView: UIView
 {
-	var delegate: XYInputViewDelegate?
+    weak var delegate: XYInputViewDelegate!
 	private var textField = UITextField()
 	private var sendButton = UIButton()
 	private var originFrame = CGRect()
@@ -74,7 +74,7 @@ class XYInputView: UIView
 			0.3,
 			delay: 0,
 			options: .CurveEaseInOut,
-			animations: { () -> Void in
+			animations: { [unowned self] in
 				self.transform = CGAffineTransformMakeTranslation(0, -keyboardRect.size.height)
 			}, completion: nil)
 	}
@@ -84,7 +84,7 @@ class XYInputView: UIView
 			0.3,
 			delay: 0,
 			options: .CurveEaseInOut,
-			animations: { () -> Void in
+			animations: { [unowned self] in
 				self.transform = CGAffineTransformMakeTranslation(0, 0)
 			}, completion: nil)
 		
