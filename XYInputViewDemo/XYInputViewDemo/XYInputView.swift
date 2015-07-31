@@ -74,7 +74,7 @@ class XYInputView: UIView
 			0.3,
 			delay: 0,
 			options: .CurveEaseInOut,
-			animations: { [unowned self] in
+			animations: { void in
 				self.transform = CGAffineTransformMakeTranslation(0, -keyboardRect.size.height)
 			}, completion: nil)
 	}
@@ -84,7 +84,7 @@ class XYInputView: UIView
 			0.3,
 			delay: 0,
 			options: .CurveEaseInOut,
-			animations: { [unowned self] in
+			animations: { void in
 				self.transform = CGAffineTransformMakeTranslation(0, 0)
 			}, completion: nil)
 		
