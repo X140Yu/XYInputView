@@ -37,6 +37,10 @@ class XYInputView: UIView
 	required init(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 	
 	fileprivate func addCustomView() {
 		textField.frame = CGRect(x: 8, y: 8, width: frame.width*0.8, height: 24)
