@@ -17,37 +17,40 @@ class ViewController: UIViewController, XYInputViewDelegate, UITableViewDelegate
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		let keyboardInputView = XYInputView(frame: CGRect(x: 0, y: UIScreen.mainScreen().bounds.height - 40, width: UIScreen.mainScreen().bounds.width, height: 40))
+		let keyboardInputView = XYInputView(frame: CGRect(x: 0, y: UIScreen.main.bounds.height - 40, width: UIScreen.main.bounds.width, height: 40))
 		keyboardInputView.delegate = self
 		self.view.addSubview(keyboardInputView)
 	}
 	
-	func sendButtonPressedWith(str: String) {
+	func sendButtonPressedWith(_ str: String) {
 		messages.append(str)
 		tableView.reloadData()
 	}
 	
-	func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
 		self.view.endEditing(true)
 	}
 	
 	
 	// MARK: UITableView Data Source
 
-	func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+	func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
 	}
 	
-	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return messages.count
 	}
 	
-	func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) 
 		cell.textLabel?.text = messages[indexPath.row]
 		return cell
 	}
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 

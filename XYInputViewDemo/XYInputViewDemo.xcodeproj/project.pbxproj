@@ -172,9 +172,11 @@
 				TargetAttributes = {
 					A82856E91B1AE64400CF5B07 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0810;
 					};
 					A82856FE1B1AE64400CF5B07 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0810;
 						TestTargetID = A82856E91B1AE64400CF5B07;
 					};
 				};
@@ -357,6 +359,7 @@
 				INFOPLIST_FILE = XYInputViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -367,6 +370,7 @@
 				INFOPLIST_FILE = XYInputViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -385,6 +389,7 @@
 				INFOPLIST_FILE = XYInputViewDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XYInputViewDemo.app/XYInputViewDemo";
 			};
 			name = Debug;
@@ -400,6 +405,7 @@
 				INFOPLIST_FILE = XYInputViewDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XYInputViewDemo.app/XYInputViewDemo";
 			};
 			name = Release;
